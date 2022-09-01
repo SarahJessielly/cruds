@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Passagens {% endblock %}
+
+{% block content %}
+
+    <h1>Passagens</h1>
+    <p><a href="{% url 'cadastrar_passagem' %}"> Cadastrar </a></p>
+
+    <p>Listar Passagens</p>
+    {% for passagem in todas_passagens %}
+
+    <p>
+        Origem: {{passagem.origem}}
+        Destino: {{passagem.destino}} 
+        Valor: {{passagem.valor}}
+        | <a href="{% url 'editar_passagem' passagem.id %}">EDITAR</a>
+        | <a href="{% url 'remover_passagem' passagem.id %}">REMOVER</a>
+    </p>
+
+    {% empty %}
+
+    <p> Não existem cursos Cadastrados. </p>
+
+    {% endfor %}
+
+{% endblock %}

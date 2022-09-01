@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Hospedagens {% endblock %}
+
+{% block content %}
+
+    <h1>Hospedagens</h1>
+    <p><a href="{% url 'cadastrar_hospedagem' %}"> Cadastrar </a></p>
+
+    <p>Listar Hospedagens</p>
+    {% for hospedagem in todas_hospedagens %}
+
+    <p>
+        <img src="/media/{{hospedagem.foto}}" alt="" width="100px" height="100px"/>
+        Nome: {{hospedagem.nome}} 
+        Categoria: {{hospedagem.categoria}}
+        Localização: {{hospedagem.localização}} 
+        Valor: {{hospedagem.valor}}
+        | <a href="{% url 'editar_hospedagem' hospedagem.id %}">EDITAR</a>
+        | <a href="{% url 'remover_hospedagem' hospedagem.id %}">REMOVER</a>
+    </p>
+
+    {% empty %}
+
+    <p> Não existem cursos Cadastrados. </p>
+    
+    {% endfor %}
+
+{% endblock %}

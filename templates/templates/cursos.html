@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de Cursos {% endblock %}
+
+{% block content %}
+
+    <h1>Cursos</h1>
+    <p><a href="{% url 'cadastrar_cursos' %}"> Cadastrar </a></p>
+
+    <p>Listagem de Cursos</p>
+    {% for curso in todos_cursos %}
+    
+    <p>
+        Título: {{curso.titulo}} 
+        Vagas: {{curso.vagas}}
+        | <a href="{% url 'editar_curso' curso.id %}">EDITAR</a>
+        | <a href="{% url 'remover_curso' curso.id %}">REMOVER</a>
+    </p>
+    
+    {% empty %}
+
+    <p> Não existem cursos Cadastrados. </p>
+
+    {% endfor %}
+
+{% endblock %}

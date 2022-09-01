@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Travels {% endblock %}
+
+{% load static %}
+{% block content %}
+
+    <h1 id="titulo">Travels</h1> <br> <br> <br>
+
+    <p id="paragrafo"> Passeios turísticos internacionais com guias de turismo privativos, 
+        em mais de 60 países. Incluindo passeios em cruzeiros marítimos. 
+        A Travels oferece as melhores passagens promocionais para diversos 
+        destinos do Brasil e do mundo. Conheça o destino a acomodação dos 
+        seus sonhos pelo menor preço. Sem Taxas de Reserva. </p> <br>
+
+    <p id="paragrafo"> Esteja preparado para todos as situações no Aeroporto, Imigração ou 
+        Restaurantes. Na Travels você aprende Inglês ou qualquer outro idioma 
+        para Sua Próxima Viagem. Parcele em Até 10x. Cursos com Até 40% de Desconto. </p> <br>
+
+    <p id="paragrafo">Sonhe. Planeje. Embarque!</p> <br> <br> <br> <br>
+
+    <center>
+        <a href="{% url 'listar_passagens' %}"><img src="{% static '/img/passagens.JPG' %}"width="300px" class="image"></a>
+        <a href="{% url 'listar_cursos' %}"><img src="{% static '/img/curso.JPG' %}" width="300px"></a> 
+        <a href="{% url 'listar_hospedagem' %}"><img src="{% static '/img/hospedagem.JPG' %}" width="300px"></a>
+    </center>
+    {% endblock %}
