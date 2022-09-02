@@ -9,21 +9,64 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: rgb(225, 255, 252);
 }
 
-#titulo {
+.titulo {
     color: white;
     text-indent: 100px;
-    background-color:rgb(37, 108, 240);
+    background-color:rgb(3, 32, 85);
     height: 100px;
     line-height: 100px;
     box-shadow: 0 1px 2px #ccc;
-    font-size: 50px;
+    font-size: 40px;
+}
+
+.titulo2 {
+    color: white;
+    text-align: center;
+    background-color:rgb(3, 32, 85);
+    line-height: 80px;
+    font-size: 30px;
 }
 
 p {
     padding-left: 200px;
     padding-right: 200px;
     text-align: justify;
-    font-size: 20px;
+    font-size: 17px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 1000px;
+}
+
+th {
+    font-weight: bold;
+    background-color: rgb(3, 32, 85);
+    color: white;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgba(255, 68, 0, 0.397);
+}
+
+button {
+    border-radius: 8px;
+    padding:5px 15px;
+    border: 2px solid rgb(295, 65, 0);
+    background-color: rgb(245, 65, 0);
+    color: rgb(225, 255, 252);
+}
+
+.botão1 {
+    padding-left: 200px;
 }

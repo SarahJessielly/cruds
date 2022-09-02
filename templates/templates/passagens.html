@@ -4,20 +4,39 @@
 
 {% block content %}
 
-    <h1>Passagens</h1>
-    <p><a href="{% url 'cadastrar_passagem' %}"> Cadastrar </a></p>
-
-    <p>Listar Passagens</p>
-    {% for passagem in todas_passagens %}
-
-    <p>
-        Origem: {{passagem.origem}}
-        Destino: {{passagem.destino}} 
-        Valor: {{passagem.valor}}
-        | <a href="{% url 'editar_passagem' passagem.id %}">EDITAR</a>
-        | <a href="{% url 'remover_passagem' passagem.id %}">REMOVER</a>
-    </p>
-
+    <header>
+        <h1 class="titulo2">Passagens</h1>
+    </header><br><br>
+    
+    <main class="botão1"> 
+        <a href="{% url 'cadastrar_passagem' %}"><button type="button"> Cadastrar </button></a>
+    </main><br>
+{% for passagem in todas_passagens %} <br>
+<center>
+    <table class="div">
+        <div>    
+            <tr>
+                <th>Origem</th>
+                <th>&nbsp;</th>
+                <th>Destino</th>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+        </div>
+        <div>
+            <tr>
+                <div>
+                    <td>{{passagem.origem}}</td>
+                    <td> --- </td>
+                    <td>{{passagem.destino}}</td>
+                    <td>{{passagem.valor}}</td>
+                    <td><a href="{% url 'editar_passagem' passagem.id %}"><button type="button"> Editar </button> 
+                        <a href="{% url 'remover_passagem' passagem.id %}"><button type="button"> Remover </button></td>
+                </div>
+            </tr>
+        </div>
+    </table>
+</center>
     {% empty %}
 
     <p> Não existem cursos Cadastrados. </p>

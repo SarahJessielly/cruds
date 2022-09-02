@@ -4,21 +4,41 @@
 
 {% block content %}
 
-    <h1>Hospedagens</h1>
-    <p><a href="{% url 'cadastrar_hospedagem' %}"> Cadastrar </a></p>
+<header>
+    <h1 class="titulo2">Hospedagens</h1>
+</header><br><br>
 
-    <p>Listar Hospedagens</p>
-    {% for hospedagem in todas_hospedagens %}
-
-    <p>
-        <img src="/media/{{hospedagem.foto}}" alt="" width="100px" height="100px"/>
-        Nome: {{hospedagem.nome}} 
-        Categoria: {{hospedagem.categoria}}
-        Localização: {{hospedagem.localização}} 
-        Valor: {{hospedagem.valor}}
-        | <a href="{% url 'editar_hospedagem' hospedagem.id %}">EDITAR</a>
-        | <a href="{% url 'remover_hospedagem' hospedagem.id %}">REMOVER</a>
-    </p>
+<main class="botão1"> 
+    <a href="{% url 'cadastrar_hospedagem' %}"><button type="button"> Cadastrar </button></a>
+</main><br>
+    {% for hospedagem in todas_hospedagens %}<br>
+    <center>
+        <table class="div">
+            <div>    
+                <tr>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Localização</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </div>
+            <div>
+                <tr>
+                    <div>
+                        <td><img src="/media/{{hospedagem.foto}}" alt="" width="100px" height="100px"/></td>
+                        <td>{{hospedagem.nome}}</td>
+                        <td>{{hospedagem.categoria}}</td>
+                        <td>{{hospedagem.localização}}</td>
+                        <td>{{hospedagem.valor}}</td>
+                        <td><a href="{% url 'editar_hospedagem' hospedagem.id %}"><button type="button"> Editar </button> 
+                            <a href="{% url 'remover_hospedagem' hospedagem.id %}"><button type="button"> Remover </button></td>
+                    </div>
+                </tr>
+            </div>
+        </table>
+    </center>
 
     {% empty %}
 

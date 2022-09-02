@@ -4,19 +4,36 @@
 
 {% block content %}
 
-    <h1>Cursos</h1>
-    <p><a href="{% url 'cadastrar_cursos' %}"> Cadastrar </a></p>
+<header>
+    <h1 class="titulo2">Cursos</h1>
+</header><br><br>
 
-    <p>Listagem de Cursos</p>
-    {% for curso in todos_cursos %}
-    
-    <p>
-        Título: {{curso.titulo}} 
-        Vagas: {{curso.vagas}}
-        | <a href="{% url 'editar_curso' curso.id %}">EDITAR</a>
-        | <a href="{% url 'remover_curso' curso.id %}">REMOVER</a>
-    </p>
-    
+<main class="botão1"> 
+    <a href="{% url 'cadastrar_cursos' %}"><button type="button"> Cadastrar </button></a>
+</main><br>
+    {% for curso in todos_cursos %}<br>
+    <center>
+        <table class="div">
+            <div>    
+                <tr>
+                    <th>Titulo</th>
+                    <th>Vagas</th>
+                    <th>Ação</th>
+                </tr>
+            </div>
+            <div>
+                <tr>
+                    <div>
+                        <td>{{curso.titulo}} </td>
+                        <td>{{curso.vagas}}</td>
+                        <td><a href="{% url 'editar_curso' curso.id %}"><button type="button"> Editar </button> 
+                            <a href="{% url 'remover_curso' curso.id %}"><button type="button"> Remover </button></td>
+                    </div>
+                </tr>
+            </div>
+        </table>
+    </center>
+
     {% empty %}
 
     <p> Não existem cursos Cadastrados. </p>
