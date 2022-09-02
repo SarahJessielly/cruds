@@ -4,12 +4,12 @@
 
 {% block content %}
 
-    <h1 class="titulo2">Cadastrar Hospedagens</h1>
-    <form method="POST" enctype="multipart/form-data">
+    <h1 class="titulo2">Cadastrar Hospedagens</h1> <br> <br><br><br><br><br><br>
+    <form method="POST" enctype="multipart/form-data" class="gg">
         {% csrf_token %}
-        {{ form_hospedagem }}
+        {{ form_hospedagem.as_p }}<br> <br>
 
-        <p><input type="submit" value="Cadastrar"/></p>
+        <p class="bot"><input type="submit" value="Cadastrar"/></p>
     </form>
 
 {% endblock %}

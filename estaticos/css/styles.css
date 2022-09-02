@@ -70,3 +70,14 @@ button {
 .botão1 {
     padding-left: 200px;
 }
+
+.gg{
+    padding-left: 350px;
+    padding-right: 350px;
+    text-align: center;
+    border: 1;
+}
+
+.bot{
+    text-align: center;
+}

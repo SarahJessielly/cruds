@@ -7,7 +7,7 @@ class Curso(models.Model):
 class Passagem(models.Model):
     origem = models.CharField('Origem', max_length=100)
     destino = models.CharField('Destino', max_length=100)
-    valor = models.IntegerField('Valor', max_length=100)
+    valor = models.IntegerField('  Valor      ', max_length=100)
 
 class Hospedagem(models.Model):
     foto = models.ImageField('Foto', upload_to='Hospedagem', null=True)

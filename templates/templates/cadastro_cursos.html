@@ -3,12 +3,10 @@
 {% block title %} Cadastro de Cursos {% endblock %}
 
 {% block content %}
-
-    <h1 class="titulo2">Cadastrar Curso</h1>
-    <form method="POST">
+    <h1 class="titulo2">Cadastrar Curso</h1> <br> <br><br><br><br><br><br>
+    <form method="POST" class="gg">
         {% csrf_token %}
-        {{ form_curso }}
-        <p><input type="submit" value="Cadastrar"/></p>
+        {{ form_curso.as_p }}<br><br>
+        <p class="bot"><input type="submit" value="Cadastrar"/></p>
     </form>
-
 {% endblock %}
